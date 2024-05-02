@@ -10,8 +10,8 @@ PKG_CHECK_MODULES(GLIB2 REQUIRED glib-2.0>=2.36.0)
 
 set(LIB_TYPE STATIC)
 
-set(CMAKE_C_FLAGS "-Wall -std=c99 -D_POSIX_C_SOURCE=2")
-set(CMAKE_CXX_FLAGS "-Wall -std=c++11")
+set(CMAKE_C_FLAGS "-Wall -std=c99 -D_POSIX_C_SOURCE=2  -D_DARWIN_C_SOURCE=900000L -I/usr/local/include -L/usr/local/lib -L/opt/homebrew/Cellar/glib/2.80.0_2/lib -L/opt/homebrew/opt/gettext/lib")
+set(CMAKE_CXX_FLAGS "-Wall -std=c++11 -I/usr/local/include -L/usr/local/lib -L/opt/homebrew/Cellar/glib/2.80.0_2/lib -L/opt/homebrew/opt/gettext/lib")
 
 if(COVERAGE)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0 --coverage -fprofile-arcs -ftest-coverage")
